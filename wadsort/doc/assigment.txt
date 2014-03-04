@@ -1,0 +1,45 @@
+As part of our recruitment process we ask candidates to complete a small programming assignment. The assignment is technically easy, but is intended to provide enough scope to allow you to demonstrate your knowledge of good programming practices. Assume that the code you are writing will reside in our main production codebase. When you are on-site, we will describe a modification of the requirements of this project, and then one or two of our engineers with pair with you on making the changes to your code.
+
+Development Notes
+• There is no time limit to complete this exercise.
+• If there are errors in the example, state your assumptions and continue.
+• No user interface is required; the program will be run from the console and should require no command line parameters to execute normally
+• Assume that all files (input and output) will be found/created in the same directory as the program executes
+• As part of the exercise, you may choose to write unit tests appropriate for the task.
+• Use the development tools of your choice, but please write the software in Java.
+• You may not use any external libraries with the exception of standard I/O and possibly a unit testing framework.
+• You may not use any built-in data structures such as lists, vectors, queues etc. You must build your solution using basic types such as integers, strings and arrays.
+• You may not use any built-in sort or histogram functions.
+• Please submit all available aspects of your work (source, buildfiles, executables, test input/output etc)
+• Have Fun!
+
+-----------------
+
+WadSort requirements version 1.0.0
+
+1) Read an ascii text file named "input.txt" that contains a list of numbers with integer values, each number separated by a cr/lf
+Sample input (input.txt)
+6
+54
+12
+22
+1
+6
+
+2) Sort the numbers in ascending order and write the results to an output file named "ascending.txt". Format the file in the same manner as the input file (cr/lf delimiters).
+Sample output (ascending.txt)
+1
+6
+6
+12
+22
+54
+
+3) Group the numbers by their value and produce a histogram list providing the count of how many numbers of each value were read. Write the output to a file named "histogram.txt", formatted using cr/lf delimiters.
+Sample output (histogram.txt)
+1:1
+6:2
+12:1
+22:1
+54:1
+
