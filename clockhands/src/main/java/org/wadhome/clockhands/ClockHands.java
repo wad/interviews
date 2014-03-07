@@ -8,15 +8,13 @@ public class ClockHands {
     // specify hour from 1 to 12, minute from 0 to 59
     public static int getAngleInDegrees(int hour, int minute) {
 
-        // The hour needs to use 0 instead of 12
-        hour = hour == 12 ? 0 : hour;
-
         int minuteHandAngle = minute * DEGREES_PER_MINUTE;
 
-        // Minutes divided by 60 results in a percentage of full circle. Multiply that by DEGREES_PER_HOUR.
-        // So it's just dividing the minutes by two. A right-shift does the same thing, with no remainder.
-        int additionalDegreesForHourHandAngle = minute >> 1;
-        int hourHandAngle = (hour * DEGREES_PER_HOUR) + additionalDegreesForHourHandAngle;
+        // Need to add a little to the hour hand, to account for minutes:
+        // Minutes divided by 60 results in a percentage of full circle.
+        // Multiply that by DEGREES_PER_HOUR, results in just dividing the minutes by two.
+        // A right-shift does the same thing, with no remainder.
+        int hourHandAngle = (hour * DEGREES_PER_HOUR) + (minute >> 1);
 
         int angle = minuteHandAngle - hourHandAngle;
 
