@@ -9,10 +9,10 @@ public class NestedParenthesisTest
 	public void testIt()
 	{
 		NestedParenthesis np = new NestedParenthesis();
-		Assert.assertEquals("", np.showAllValidConfigurations(0));
-		Assert.assertEquals("()", np.showAllValidConfigurations(1));
-		Assert.assertEquals("(()),()()", np.showAllValidConfigurations(2));
-		Assert.assertEquals("((())),(()()),(())(),()(()),()()()", np.showAllValidConfigurations(3));
-		Assert.assertEquals("(((()))),((()())),((())()),((()))(),(()(())),(()()()),(()())(),(())(()),(())()(),()((())),()(()()),()(())(),()()(()),()()()()", np.showAllValidConfigurations(4));
+		Assert.assertEquals("[]", np.showAllValidConfigurations(0));
+		Assert.assertEquals("[()]", np.showAllValidConfigurations(1));
+		Assert.assertEquals("[(()), ()()]", np.showAllValidConfigurations(2));
+		Assert.assertEquals("[((())), (()()), (())(), ()(()), ()()()]", np.showAllValidConfigurations(3));
+		Assert.assertEquals("[(((()))), ((()())), ((())()), ((()))(), (()(())), (()()()), (()())(), (())(()), (())()(), ()((())), ()(()()), ()(())(), ()()(()), ()()()()]", np.showAllValidConfigurations(4));
 	}
 }
