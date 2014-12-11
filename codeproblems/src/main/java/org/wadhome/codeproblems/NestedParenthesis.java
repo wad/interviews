@@ -19,21 +19,17 @@ public class NestedParenthesis
 
 	void buildEntries(String entry, int numLeftsUsed, int numRightsUsed)
 	{
-		if (numLeftsUsed > totalPairsRequested || numRightsUsed > totalPairsRequested)
+		if (numLeftsUsed > totalPairsRequested || numRightsUsed > numLeftsUsed)
 			// Invalid situation detected, just drop this entry.
 			return;
 
-		if (numLeftsUsed == totalPairsRequested && numRightsUsed == totalPairsRequested)
+		if (numRightsUsed == totalPairsRequested)
 			// We got a valid entry, let's keep it!
 			entries.add(entry);
 		else
 		{
-			// We can always try another left paren.
 			buildEntries(entry + "(", numLeftsUsed + 1, numRightsUsed);
-
-			// Only try a right paren if there are more left parens already in this entry.
-			if (numLeftsUsed > numRightsUsed)
-				buildEntries(entry + ")", numLeftsUsed, numRightsUsed + 1);
+			buildEntries(entry + ")", numLeftsUsed, numRightsUsed + 1);
 		}
 	}
 }
