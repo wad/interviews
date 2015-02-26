@@ -1,5 +1,6 @@
 package org.wadhome.codeproblems;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -9,24 +10,27 @@ import java.util.Set;
 public class Subsets
 {
 
+	public static final BigInteger ONE = BigInteger.ONE;
+	public static final BigInteger ZERO = BigInteger.ZERO;
+
 	public static Set<Set<String>> getAllSubsets(Set<String> set)
 	{
 		List<String> orderedElements = new ArrayList<String>(set);
 		Set<Set<String>> subsets = new HashSet<Set<String>>();
 
 		int numBits = orderedElements.size();
-		int allBitsHigh = (1 << numBits) - 1;
+		BigInteger allBitsHigh = ONE.shiftLeft(numBits).subtract(ONE);
 
-		for (int i = 0; i <= allBitsHigh; i++)
+		for (BigInteger i = ZERO; i.compareTo(allBitsHigh) <= 0; i = i.add(ONE))
 		{
 			Set<String> subset = new HashSet<String>();
-			int temp = i;
+			BigInteger temp = i;
 			int elementPosition = 0;
-			while (temp > 0)
+			while (temp.compareTo(ZERO) > 0)
 			{
-				if ((temp & 1) == 1)
+				if ((temp.and(ONE).compareTo(ONE)) == 0)
 					subset.add(orderedElements.get(elementPosition));
-				temp >>= 1;
+				temp = temp.shiftRight(1);
 				elementPosition++;
 			}
 			subsets.add(subset);
