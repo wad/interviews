@@ -3,6 +3,7 @@ package org.wadhome.codeproblems;
 import java.util.ArrayList;
 import java.util.List;
 
+// Given n, emit all valid configuration of n pairs of parenthesis
 public class NestedParenthesis
 {
 

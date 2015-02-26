@@ -1,5 +1,6 @@
-package org.wadhome.clockhands;
+package org.wadhome.codeproblems;
 
+// Given a time (hour and minute), determine the angle between the hour hand and minute hand on an analog clock.
 public class ClockHands {
 
     static final int DEGREES_PER_MINUTE = 6;
